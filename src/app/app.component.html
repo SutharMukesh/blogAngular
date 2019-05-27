@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row header">
+    <div class="col">
+      {{title}}</div>
+  </div>
+  <ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link " [routerLink]="['/home']">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " [routerLink]="['/blog']">Blog</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Contact</a>
+    </li>
+  </ul>
+  <br>
+  <router-outlet></router-outlet>
+  
+</div>
