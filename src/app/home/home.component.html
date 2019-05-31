@@ -1,3 +1,14 @@
-<p>
-  home works!
-</p>
+<div class="container">
+  <div class="row" style="text-align: center">
+    <div *ngFor="let blog of allBlogs" class="col">
+      <div class="panel panel-default">
+        <div class="panel-heading">{{blog.Name}}</div>
+        <div class="panel-body">{{blog.Description}}</div>
+        <div class="panel-footer">
+          {{blog.Author}}<br>
+          <a [routerLink]="[ '/blog', blog.Id ]" class="btn btn-primary">open</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

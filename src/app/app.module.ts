@@ -17,7 +17,7 @@ import { BlogCreateComponent } from './blog-create/blog-create.component';
     BrowserModule,
     RouterModule.forRoot([
       { path: "home", component: HomeComponent },
-      { path: "blog", component: BlogViewComponent },
+      { path: "blog/:blogId", component: BlogViewComponent },
       { path: "", redirectTo: "home", pathMatch: "full" }
     ])
   ],
