@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 @Component({
   selector: 'app-blog-view',
   templateUrl: './blog-view.component.html',
   styleUrls: ['./blog-view.component.css']
 })
-export class BlogViewComponent implements OnInit {
+export class BlogViewComponent implements OnInit, OnDestroy {
   public currentBlog;
 
   public allBlogs = [{
@@ -32,9 +32,13 @@ export class BlogViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log("youre in Blog-view Component")
     let blogId = this._route.snapshot.paramMap.get("blogId");
     this.currentBlog = this.getCurrentBlog(blogId);
     console.log(this.currentBlog);
+  }
+  ngOnDestroy(): void {
+    console.log("youre destroying Blog-view component")
   }
 
   public getCurrentBlog = function (blogId) {
