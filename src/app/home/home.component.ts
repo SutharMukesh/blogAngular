@@ -1,32 +1,19 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { BlogService } from '../blog.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, OnDestroy{
+export class HomeComponent implements OnInit, OnDestroy {
 
-  public allBlogs = [{
-    Id: 1,
-    Name: "Blog1",
-    Description: "Desc1",
-    Author: "xyz"
-  },
-  {
-    Id: 2,
-    Name: "Blog2",
-    Description: "Desc2",
-    Author: "abc"
-  },
-  {
-    Id: 3,
-    Name: "Blog 3",
-    Description: "Desc 3",
-    Author: "xyz"
-  }]
+  public allBlogs;
 
-  constructor() { }
+  constructor(private BlogService: BlogService) { 
+    console.log(BlogService)
+    this.allBlogs = BlogService.getAllBlog();
+  }
 
   ngOnInit() {
     console.log("youre in Home component")

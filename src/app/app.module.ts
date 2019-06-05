@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { BlogEditComponent } from './blog-edit/blog-edit.component';
+import { BlogService } from './blog.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
       { path: "", redirectTo: "home", pathMatch: "full" }
     ])
   ],
-  providers: [],
+  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
